@@ -1,5 +1,6 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
 import {IsString, IsNumber, MinLength, MaxLength, Min, Max} from 'class-validator';
+import { ProductFeatures } from './productFeature.entity';
 
 @Entity()
 export class Product{
@@ -43,4 +44,7 @@ export class Product{
     @Min(1)
     @Max(5)
     score: number;
+
+    @OneToMany(() => ProductFeatures, (feature) => feature.product)
+    features: ProductFeatures;
 }
