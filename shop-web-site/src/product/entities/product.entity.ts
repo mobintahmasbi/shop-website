@@ -1,6 +1,7 @@
-import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany, OneToOne, JoinColumn } from 'typeorm';
 import {IsString, IsNumber, MinLength, MaxLength, Min, Max} from 'class-validator';
 import { ProductFeatures } from './productFeature.entity';
+import { Category } from './category.entity';
 
 @Entity()
 export class Product{
@@ -47,4 +48,8 @@ export class Product{
 
     @OneToMany(() => ProductFeatures, (feature) => feature.product)
     features: ProductFeatures;
+
+    @OneToOne(() => Category)
+    @JoinColumn()
+    category: Category;
 }

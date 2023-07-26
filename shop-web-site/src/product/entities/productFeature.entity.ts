@@ -3,7 +3,7 @@ import {IsString, MinLength} from 'class-validator';
 import { Product } from './product.entity';
 
 @Entity()
-export class ProductFeatures{
+export class ProductFeatures {
     
     @PrimaryGeneratedColumn()
     productFeatureId: number;
