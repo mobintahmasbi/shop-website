@@ -1,5 +1,6 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
 import {IsString, MinLength, MaxLength} from 'class-validator'
+import { Order } from 'src/order/entities/order.entity';
 
 @Entity()
 export class User{
@@ -43,4 +44,6 @@ export class User{
     })
     status: string;
 
+    @OneToMany(() => Order, (order) => order.user)
+    orders: Order[];
 }

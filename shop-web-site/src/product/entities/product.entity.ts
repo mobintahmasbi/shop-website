@@ -47,7 +47,7 @@ export class Product{
     score: number;
 
     @OneToMany(() => ProductFeatures, (feature) => feature.product)
-    features: ProductFeatures;
+    features: ProductFeatures[];
 
     @OneToOne(() => Category)
     @JoinColumn()
