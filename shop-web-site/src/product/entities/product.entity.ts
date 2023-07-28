@@ -2,6 +2,7 @@ import { Entity, Column, PrimaryGeneratedColumn, OneToMany, OneToOne, JoinColumn
 import {IsString, IsNumber, MinLength, MaxLength, Min, Max} from 'class-validator';
 import { ProductFeatures } from './productFeature.entity';
 import { Category } from './category.entity';
+import { Comment } from 'src/comment/entities/comment.entity';
 
 @Entity()
 export class Product{
@@ -52,4 +53,7 @@ export class Product{
     @OneToOne(() => Category)
     @JoinColumn()
     category: Category;
+
+    @OneToMany(() => Comment, (comment) => comment.product)
+    comments: Comment[];
 }

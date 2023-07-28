@@ -1,6 +1,7 @@
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
 import {IsString, MinLength, MaxLength} from 'class-validator'
 import { Order } from 'src/order/entities/order.entity';
+import { Comment } from 'src/comment/entities/comment.entity';
 
 @Entity()
 export class User{
@@ -46,4 +47,7 @@ export class User{
 
     @OneToMany(() => Order, (order) => order.user)
     orders: Order[];
+
+    @OneToMany(() => Comment, (comment) => comment.user)
+    comments: Comment[];
 }
