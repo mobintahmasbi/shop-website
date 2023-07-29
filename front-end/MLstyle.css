@@ -1,0 +1,54 @@
+@font-face{
+    font-family: iransans;
+    src: url('./fonts/IRANSansX-Regular.woff');
+}
+@font-face{
+    font-family: iransans;
+    src: url('./fonts/IRANSansX-Bold.woff');
+    font-weight: bold;
+}
+
+html,
+body {
+    direction: rtl;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #536976;
+    background: -webkit-linear-gradient(to top, #292E49, #536976);
+    background: linear-gradient(to top, #292E49, #536976);
+    font-family: iransans;
+}
+
+.login-container{
+    color: #27374D;
+    background-color: #DDE6ED;
+    width: 35%;
+}
+
+.header {
+    font-size: 30px;
+    font-weight: bold;
+    border-bottom: 3px solid #27374D;
+    width: 100%;
+}
+
+.userNameLabel {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.login-btn {
+    color: #DDE6ED;
+    background-color: #27374D;
+    font-weight: bold;
+}
+
+.login-btn:hover {
+    background-color: #536976;
+    color: #DDE6ED;
+}
+/* https://colorhunt.co/palette/27374d526d829db2bfdde6ed */
