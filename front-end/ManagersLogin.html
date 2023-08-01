@@ -19,19 +19,25 @@
       <div
         class="containerOfInputs w-100 d-flex justify-content-center align-items-center flex-column"
       >
-        <div class="userName d-flex justify-content-between align-items-center w-75">
+        <div class="userName d-flex justify-content-between align-items-center w-75 flex-wrap">
           <label for="userNameInput" class="form-label userNameLabel w-25 pt-1"> نام کاربری </label>
           <input id="userNameInput" type="text" class="form-control" placeholder="نام کاربری" />
+          <div class="invalid-feedback">
+          </div>
         </div>
         
-        <div class="password d-flex justify-content-between align-items-center w-75 pt-3">
+        <div class="password d-flex justify-content-between align-items-center w-75 pt-3 flex-wrap">
           <label for="passwordInput" class="form-label userNameLabel w-25 pt-1"> رمز عبور  </label>
           <input id="passwordInput" type="text" class="form-control" placeholder="رمز عبور" />
+          <div class="invalid-feedback">
+          </div>
         </div>
 
-        <div class="phoneNumber d-flex justify-content-between align-items-center w-75 pt-3">
+        <div class="phoneNumber d-flex justify-content-between align-items-center w-75 pt-3 flex-wrap">
           <label for="phoneNumberInput" class="form-label userNameLabel w-25 pt-1"> شماره تلفن   </label>
           <input id="phoneNumberInput" type="text" class="form-control" placeholder="شماره تلفن  " />
+          <div class="invalid-feedback">
+          </div>
         </div>
         <div class="d-flex justify-content-between align-items-center w-75 pt-3">
           <button id="loginButton" class="btn login-btn w-100 shadow-lg">
