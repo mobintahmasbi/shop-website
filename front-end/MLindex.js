@@ -2,7 +2,7 @@ const userName = document.getElementById("userNameInput");
 const password = document.getElementById("passwordInput");
 const phoneNumber = document.getElementById("phoneNumberInput");
 const loginButton = document.getElementById("loginButton");
-
+console.dir(userName);
 function checkInputs(element) {
   let mailiciousKeyWord = ["'", "-", "=", "+", ";", '"', "%", "#", ".", ","];
   let input = element.value;
@@ -54,10 +54,17 @@ function validate() {
       "شماره تلفن باید دارای 11 شماره باشد",
     ]);
   }
-  console.log(errors);
-  return 3 === counter;
+  
+  return errors;
 }
 
 loginButton.addEventListener("click", (e) => {
-  console.log(validate());
+  let validations = validate()
+  if (validations.length > 0) {
+    validations.forEach((v) => {
+      let el = v[0].nextElementSibling
+      el.innerText = v[1]
+      el.style.display = "flex"
+    })
+  }
 });

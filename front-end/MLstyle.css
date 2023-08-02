@@ -51,4 +51,9 @@ body {
     background-color: #536976;
     color: #DDE6ED;
 }
+
+.if-styles {
+    font-size: 12px;
+    font-weight: bold;
+}
 /* https://colorhunt.co/palette/27374d526d829db2bfdde6ed */
