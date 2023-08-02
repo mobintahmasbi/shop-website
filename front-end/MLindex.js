@@ -58,7 +58,14 @@ function validate() {
   return errors;
 }
 
+function clearinvalidfeedbacks(){
+  userName.nextElementSibling.style.display = "none";
+  password.nextElementSibling.style.display = "none";
+  phoneNumber.nextElementSibling.style.display = "none";
+}
+
 loginButton.addEventListener("click", (e) => {
+  clearinvalidfeedbacks()
   let validations = validate()
   if (validations.length > 0) {
     validations.forEach((v) => {
