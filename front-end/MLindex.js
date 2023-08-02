@@ -2,7 +2,7 @@ const userName = document.getElementById("userNameInput");
 const password = document.getElementById("passwordInput");
 const phoneNumber = document.getElementById("phoneNumberInput");
 const loginButton = document.getElementById("loginButton");
-console.dir(userName);
+
 function checkInputs(element) {
   let mailiciousKeyWord = ["'", "-", "=", "+", ";", '"', "%", "#", ".", ","];
   let input = element.value;
@@ -15,6 +15,31 @@ function checkInputs(element) {
   return bol;
 }
 
+userName.addEventListener("blur", () => {
+  clearspecificinvalidfeedback(userName, 'userName')
+})
+
+password.addEventListener("blur", () => {
+  clearspecificinvalidfeedback(password, 'password')
+})
+
+phoneNumber.addEventListener("blur", () => {
+  clearspecificinvalidfeedback(phoneNumber, 'phoneNumber')
+})
+
+function clearspecificinvalidfeedback(el, elName) {
+  let validation = validate()
+  let bol = true;
+  validation.forEach((v) => {
+    if (v[2] === elName) {
+      bol = false;
+    }
+  })
+  if (bol) {
+    el.nextElementSibling.style.display = 'none'
+  }
+}
+
 function validate() {
   let counter = 0;
   let errors = [];
@@ -22,36 +47,39 @@ function validate() {
     if (checkInputs(userName)) {
       counter++;
     } else {
-      errors.push([userName, "لطفا از علامت های غیر معمول استفاده نکنید"]);
+      errors.push([userName, "لطفا از علامت های غیر معمول استفاده نکنید", 'userName']);
     }
   } else {
     errors.push([
       userName,
       "تعداد کاراکتر های مورد استفاده باید بین 8 الی 25 کلمه باشد",
+      'userName'
     ]);
   }
   if (password.value.length >= 8 && password.value.length < 25) {
     if (checkInputs(password)) {
       counter++;
     } else {
-      errors.push([password, "لطفا از علامت های غیر معمول استفاده نکنید"]);
+      errors.push([password, "لطفا از علامت های غیر معمول استفاده نکنید", 'password']);
     }
   } else {
     errors.push([
       password,
       "تعداد کاراکتر های مورد استفاده باید بین 8 الی 25 کلمه باشد",
+      'password'
     ]);
   }
   if (phoneNumber.value.length === 11) {
     if (checkInputs(phoneNumber)) {
       counter++;
     } else {
-      errors.push([phoneNumber, "لطفا از علامت های غیر معمول استفاده نکنید"]);
+      errors.push([phoneNumber, "لطفا از علامت های غیر معمول استفاده نکنید", 'phoneNumber']);
     }
   } else {
     errors.push([
       phoneNumber,
       "شماره تلفن باید دارای 11 شماره باشد",
+      'phoneNumber'
     ]);
   }
   
