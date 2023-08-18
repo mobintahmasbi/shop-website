@@ -3,7 +3,7 @@ import {
     Column,
     PrimaryGeneratedColumn,
   } from 'typeorm';
-  import { IsString, MinLength, Min, MaxLength, IsNumber } from 'class-validator';
+  import { IsString, MinLength, Min, IsNumber } from 'class-validator';
 
 enum roleOfManagers {
     OWNER,
@@ -39,14 +39,13 @@ export class Manager {
 
     @Column()
     @IsString()
-    @MinLength(12)
+    @MinLength(8)
     password: string;
 
     @Column()
     @IsString()
-    @MinLength(11)
-    @MaxLength(11)
-    phoneNumber: string;
+    @MinLength(8)
+    email: string;
 
     @Column({
         type: 'enum',
