@@ -33,13 +33,27 @@
           </div>
         </div>
 
-        <div class="phoneNumber d-flex justify-content-between align-items-center w-75 pt-3 flex-wrap">
-          <label for="phoneNumberInput" class="form-label userNameLabel w-25 pt-1"> شماره تلفن   </label>
-          <input id="phoneNumberInput" type="text" class="form-control" placeholder="شماره تلفن  " />
+        <div class="email d-flex justify-content-between align-items-center w-75 pt-3 flex-wrap">
+          <label for="emailInput" class="form-label userNameLabel w-25 pt-1">  ایمیل   </label>
+          <input id="emailInput" type="text" class="form-control" placeholder="ایمیل" />
           <div class="invalid-feedback if-styles">
           </div>
         </div>
+
         <div class="d-flex justify-content-between align-items-center w-75 pt-3">
+          <button id="sendingCodeButton" class="btn login-btn w-100 shadow-lg">
+            ارسال کد
+          </button>
+        </div>
+        <!-- the below elements are going to show when the above inputs validation in server  -->
+        <div class="confirmCode d-none justify-content-between align-items-center w-75 pt-3 flex-wrap">
+          <label for="confirmCodeInput" class="form-label userNameLabel w-25 pt-1">  کد تایید   </label>
+          <input id="confirmCodeInput" type="text" class="form-control" placeholder="کد تایید" />
+          <div class="invalid-feedback if-styles">
+          </div>
+        </div>
+
+        <div class="d-none justify-content-between align-items-center w-75 pt-3">
           <button id="loginButton" class="btn login-btn w-100 shadow-lg">
             ورود
           </button>
