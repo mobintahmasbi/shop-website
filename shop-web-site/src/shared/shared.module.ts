@@ -4,6 +4,6 @@ import { ValidationService } from './validation/validation.service';
 
 @Module({
   providers: [HashService, ValidationService],
-  exports: [HashService]
+  exports: [HashService, ValidationService]
 })
 export class SharedModule {}
